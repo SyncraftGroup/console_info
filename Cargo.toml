@@ -1,0 +1,10 @@
+[package]
+name = "console_info"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+console = "0.16.4"
+inquire = "0.9.4"
+owo-colors = "4.3.0"
+sys-locale = "0.3.2"
