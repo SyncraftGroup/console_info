@@ -149,17 +149,17 @@ impl Ui {
 
     /// Prompt for text input.
     pub fn input(&self, content: &str) -> Result<String, Error> {
-        prompt_input(&content)
+        prompt_input(content)
     }
 
     /// Prompt for y/n confirmation.
     pub fn confirm(&self, content: &str) -> Result<bool, Error> {
-        prompt_confirm(&content)
+        prompt_confirm(content)
     }
 
     /// Prompt to pick one option from a list (radio select).
     pub fn select<T: Display>(&self, content: &str, options: Vec<T>) -> Result<T, Error> {
-        prompt_select(&content, options)
+        prompt_select(content, options)
     }
 
     pub fn echo(&self, text: &str) {
@@ -183,7 +183,7 @@ impl Ui {
 fn box_width(content: &str) -> usize {
     let max_visual = content
         .lines()
-        .map(|l| console::measure_text_width(l))
+        .map(console::measure_text_width)
         .max()
         .unwrap_or(0);
 
